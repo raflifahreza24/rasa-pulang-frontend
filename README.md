@@ -70,7 +70,13 @@ Preview the production build:
 
 ```bash
 npm run preview
+
 ```
+
+## Login Dashboard
+Pemilik: pemilik@rasapulang.example / DemoPemilik123!
+
+Staff: staf@rasapulang.example / DemoStaf123!	
 
 ## Author
 

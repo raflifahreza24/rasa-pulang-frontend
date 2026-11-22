@@ -1,9 +1,19 @@
+import { useState, useEffect } from 'react';
 import { aboutStoryData } from '../../data/homeData';
+import { getWebsiteContent, subscribeWebsiteContent } from '../../data/websiteContentStore';
 import ImageWithFallback from '../ui/ImageWithFallback';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 
 export default function AboutPreviewSection({ onAboutClick }) {
   const sectionRef = useScrollReveal();
+  const [story, setStory] = useState(() => getWebsiteContent().story);
+
+  useEffect(() => {
+    const unsubscribe = subscribeWebsiteContent((latest) => {
+      setStory(latest.story);
+    });
+    return unsubscribe;
+  }, []);
 
   return (
     <section id="tentang-kami" className="about-section" aria-labelledby="about-heading" ref={sectionRef}>
@@ -13,7 +23,7 @@ export default function AboutPreviewSection({ onAboutClick }) {
           <div className="about-image-wrapper reveal-init">
             <div className="about-image-frame">
               <ImageWithFallback
-                src={aboutStoryData.image}
+                src={story.image || aboutStoryData.image}
                 alt={aboutStoryData.imageAlt}
                 aspectRatio="16 / 11"
                 placeholderLabel="Foto interior toko Rasa Pulang"
@@ -29,9 +39,9 @@ export default function AboutPreviewSection({ onAboutClick }) {
             <h2 id="about-heading" className="about-title">
               {aboutStoryData.title}
             </h2>
-            <p className="about-description">
-              {aboutStoryData.description}
-            </p>
+            <div className="about-description" style={{ whiteSpace: 'pre-line' }}>
+              {story.text}
+            </div>
             <div className="about-action">
               <button
                 type="button"

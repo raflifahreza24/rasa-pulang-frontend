@@ -53,17 +53,20 @@ export const heroContent = {
   imageAlt: 'Aneka camilan kemasan dan paket hampers Rasa Pulang khas Sidoarjo',
 };
 
-// 8 Produk Unggulan diambil langsung dari 8 produk pertama productsData
-export const featuredProductsData = productsData.slice(0, 8).map((product) => ({
-  id: product.id,
-  name: product.name,
-  price: product.price,
-  status: product.availability,
-  isAvailable: product.availability === 'Tersedia',
-  image: `/images/rasa-pulang/products/${product.imageKey}.webp`,
-  alt: product.alt,
-  category: product.categoryId,
-}));
+// 8 Produk Unggulan diambil dari produk dengan isFeatured dan dipublikasikan
+export const featuredProductsData = productsData
+  .filter((product) => product.isFeatured && product.isPublished && !product.deletedAt)
+  .slice(0, 8)
+  .map((product) => ({
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    status: product.availability,
+    isAvailable: product.availability === 'Tersedia',
+    image: `/images/rasa-pulang/products/${product.imageKey}.webp`,
+    alt: product.alt,
+    category: product.categoryId,
+  }));
 
 export const benefitsData = [
   {

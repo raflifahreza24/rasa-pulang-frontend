@@ -6,3 +6,14 @@
 @import './styles/detail.css';
 @import './styles/about.css';
 @import './styles/contact.css';
+@import './styles/dashboard.css';
+@import './styles/category.css';
+@import './styles/productAdmin.css';
+@import './styles/createProduct.css';
+@import './styles/editProduct.css';
+@import './styles/productTrash.css';
+@import './styles/websiteContent.css';
+@import './styles/storeSettings.css';
+@import './styles/users.css';
+@import './styles/profile.css';
+@import './styles/login.css';

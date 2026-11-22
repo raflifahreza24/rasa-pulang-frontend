@@ -1,0 +1,973 @@
+/* ==========================================================================
+   Tata Letak dan Komponen Dashboard Admin Rasa Pulang
+   Mengacu presisi pada Screenshot Desain (media_1795315082950_57a95718.jpg)
+   ========================================================================== */
+
+.admin-root-layout {
+  min-height: 100vh;
+  display: flex;
+  background-color: #FAF6EF;
+  font-family: var(--font-family-base);
+  color: var(--color-text-dark);
+}
+
+/* ==========================================================================
+   1. Sidebar Kiri (Desktop ~250px)
+   ========================================================================== */
+.admin-sidebar {
+  width: 250px;
+  background-color: #FFFFFF;
+  border-right: 1px solid var(--color-card-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 50;
+}
+
+.admin-sidebar-brand {
+  padding: 20px 20px 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid transparent;
+}
+
+.admin-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-brand-icon {
+  flex-shrink: 0;
+}
+
+.admin-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-brand-name {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.admin-brand-sub {
+  font-size: 11.5px;
+  color: var(--color-text-subtle);
+  font-weight: 500;
+}
+
+.admin-sidebar-close-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Navigasi Menu Berkelompok */
+.admin-sidebar-nav {
+  padding: 12px 14px;
+  flex: 1;
+}
+
+.admin-nav-group {
+  margin-bottom: 18px;
+}
+
+.admin-nav-group-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--color-text-subtle);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 10px;
+  margin-bottom: 6px;
+}
+
+.admin-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-nav-li {
+  margin: 0;
+  padding: 0;
+}
+
+.admin-nav-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: transparent;
+  color: var(--color-text-dark);
+  font-family: var(--font-family-base);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.admin-nav-link:hover {
+  background-color: #FAF4EB;
+  color: var(--color-orange);
+}
+
+/* Item Menu Aktif (Ringkasan) */
+.admin-nav-link.active {
+  background-color: #FDF1E7;
+  color: var(--color-orange);
+  font-weight: 700;
+}
+
+.admin-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8A7365;
+  transition: color 0.15s ease;
+}
+
+.admin-nav-link:hover .admin-nav-icon,
+.admin-nav-link.active .admin-nav-icon {
+  color: var(--color-orange);
+}
+
+.admin-nav-text {
+  flex: 1;
+}
+
+/* Bagian Bawah Sidebar */
+.admin-sidebar-bottom {
+  padding: 16px 14px 20px 14px;
+  border-top: 1px solid var(--color-card-border);
+}
+
+.admin-sidebar-badge-wrap {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.admin-portfolio-badge {
+  background-color: #F0E6D7;
+  color: #7A6658;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 16px;
+  display: block;
+}
+
+.admin-sidebar-divider {
+  height: 1px;
+  background-color: var(--color-card-border);
+  margin-bottom: 12px;
+}
+
+.admin-logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: transparent;
+  color: var(--color-text-dark);
+  font-family: var(--font-family-base);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.admin-logout-btn:hover {
+  background-color: #FDF2F1;
+  color: #C5221F;
+}
+
+.admin-logout-icon {
+  color: #8A7365;
+  transition: color 0.15s ease;
+}
+
+.admin-logout-btn:hover .admin-logout-icon {
+  color: #C5221F;
+}
+
+/* ==========================================================================
+   2. Main Wrapper & Topbar
+   ========================================================================== */
+.admin-main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: #FAF6EF;
+}
+
+.admin-topbar {
+  height: 62px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--color-card-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.admin-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.admin-topbar-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.admin-breadcrumb-segment {
+  color: var(--color-text-muted);
+}
+
+.admin-breadcrumb-separator {
+  color: var(--color-text-subtle);
+}
+
+.admin-breadcrumb-current {
+  color: var(--color-text-dark);
+  font-weight: 700;
+}
+
+.admin-topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.admin-btn-outline-website {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: transparent;
+  border: 1.5px solid var(--color-orange);
+  color: var(--color-orange);
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.admin-btn-outline-website:hover {
+  background-color: var(--color-orange-light);
+  transform: translateY(-1px);
+}
+
+.admin-topbar-divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--color-card-border);
+  margin: 0 16px;
+}
+
+/* User Profile Trigger & Dropdown */
+.admin-user-menu-wrapper {
+  position: relative;
+}
+
+.admin-user-menu-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.admin-user-menu-trigger:hover {
+  background-color: #FAF4EB;
+}
+
+.admin-user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #F0E6D7;
+  color: var(--color-text-dark);
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-card-border);
+}
+
+.admin-user-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.admin-user-fullname {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+}
+
+.admin-user-badge {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--color-orange);
+  background-color: #FDF1E7;
+  padding: 1px 6px;
+  border-radius: 4px;
+  line-height: 1.2;
+  margin-top: 1px;
+}
+
+.admin-user-chevron {
+  color: #8A7365;
+  transition: transform 0.2s ease;
+}
+
+.admin-user-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.admin-dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  width: 200px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  padding: 6px;
+  z-index: 60;
+  animation: fadeIn 0.15s ease both;
+}
+
+.admin-dropdown-header {
+  padding: 8px 10px;
+}
+
+.admin-dropdown-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+.admin-dropdown-email {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin: 2px 0 0 0;
+}
+
+.admin-dropdown-divider {
+  height: 1px;
+  background-color: var(--color-card-border);
+  margin: 4px 0;
+}
+
+.admin-dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-dark);
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s;
+}
+
+.admin-dropdown-item:hover {
+  background-color: #FAF4EB;
+  color: var(--color-orange);
+}
+
+.admin-dropdown-item.logout:hover {
+  background-color: #FDF2F1;
+  color: #C5221F;
+}
+
+/* ==========================================================================
+   3. Konten Utama Dashboard
+   ========================================================================== */
+.admin-page-content {
+  flex: 1;
+  padding: 24px 32px 36px 32px;
+}
+
+.admin-content-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.admin-animate-fade {
+  animation: heroFadeUp 0.45s var(--ease-smooth) both;
+}
+
+/* Banner Simulasi Portofolio */
+.admin-simulation-banner {
+  background-color: #F0E6D7;
+  border: 1px solid #E4D5C2;
+  border-radius: 10px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.admin-banner-icon {
+  color: #8A7365;
+  flex-shrink: 0;
+}
+
+.admin-banner-text {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* Page Header & Button Tambah Produk */
+.admin-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  gap: 16px;
+}
+
+.admin-page-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-orange);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.admin-page-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.admin-page-description {
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.admin-btn-primary {
+  background-color: var(--color-orange);
+  color: #FFFFFF;
+  font-family: var(--font-family-base);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 6px rgba(220, 114, 44, 0.25);
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  white-space: nowrap;
+}
+
+.admin-btn-primary:hover {
+  background-color: var(--color-orange-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(220, 114, 44, 0.35);
+}
+
+.admin-btn-icon {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   4. Lima Kartu Statistik Ringkasan Katalog (Satu Baris Desktop)
+   ========================================================================== */
+.admin-summary-section {
+  margin-bottom: 24px;
+}
+
+.admin-stats-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.admin-stat-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: 12px;
+  padding: 16px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.admin-stat-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.admin-stat-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background-color: #FDF1E7;
+  color: var(--color-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.admin-stat-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-bottom: 3px;
+  white-space: nowrap;
+}
+
+.admin-stat-number {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 3px;
+}
+
+.admin-stat-hint {
+  font-size: 11px;
+  color: var(--color-text-subtle);
+  line-height: 1.3;
+}
+
+/* Catatan Visibilitas Produk */
+.admin-visibility-note {
+  background-color: #F9F4EB;
+  border: 1px solid var(--color-card-border);
+  border-radius: 10px;
+  padding: 9px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-note-icon {
+  color: #8A7365;
+  flex-shrink: 0;
+}
+
+.admin-note-text {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   5. Tabel Produk Terakhir Diperbarui
+   ========================================================================== */
+.admin-table-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.admin-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.admin-table-heading-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-table-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.015em;
+  margin-bottom: 2px;
+}
+
+.admin-table-subtitle {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.admin-link-action {
+  background: transparent;
+  border: none;
+  color: var(--color-orange);
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.admin-link-action:hover {
+  color: var(--color-orange-hover);
+  transform: translateX(2px);
+}
+
+.admin-table-responsive {
+  overflow-x: auto;
+}
+
+.admin-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-data-table th {
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-card-border);
+  background-color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.admin-data-table td {
+  padding: 12px 12px;
+  border-bottom: 1px solid #F4EBE0;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.admin-data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-data-table tbody tr:hover td {
+  background-color: #FCF9F4;
+}
+
+/* Sel Produk (Thumbnail + Nama + SKU) */
+.admin-product-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-product-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--color-card-border);
+  background-color: var(--color-cream-surface);
+  flex-shrink: 0;
+}
+
+.admin-product-thumb .image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.admin-product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-product-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-product-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.25;
+}
+
+.admin-product-sku {
+  font-size: 11.5px;
+  color: var(--color-text-subtle);
+  margin-top: 2px;
+}
+
+.admin-category-text {
+  color: var(--color-text-dark);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.admin-price-text {
+  font-weight: 700;
+  color: var(--color-text-dark);
+  font-size: 13px;
+}
+
+.admin-time-text {
+  color: var(--color-text-muted);
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+
+/* Badges Status */
+.admin-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.admin-badge.badge-success {
+  background-color: #EAF8EF;
+  color: #167C3E;
+  border: 1px solid #C2ECCF;
+}
+
+.admin-badge.badge-neutral {
+  background-color: #EDE6DF;
+  color: #594235;
+  border: 1px solid #DDD2C5;
+}
+
+/* Tombol Aksi Edit (Pencil) */
+.admin-action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid #E4D5C2;
+  background-color: #FFFFFF;
+  color: var(--color-orange);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.admin-action-btn:hover {
+  background-color: var(--color-orange-light);
+  border-color: var(--color-orange);
+  transform: scale(1.05);
+}
+
+/* Empty State */
+.admin-empty-cell {
+  padding: 48px 16px;
+  text-align: center;
+}
+
+.admin-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-empty-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 4px;
+}
+
+.admin-empty-desc {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ==========================================================================
+   6. Footer Dashboard Sederhana
+   ========================================================================== */
+.admin-footer {
+  border-top: 1px solid var(--color-card-border);
+  padding: 16px 32px;
+  background-color: transparent;
+}
+
+.admin-footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--color-text-subtle);
+}
+
+.admin-footer-left,
+.admin-footer-right {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsivitas Dashboard Admin
+   ========================================================================== */
+
+/* Desktop Sedang (<= 1200px) */
+@media (max-width: 1200px) {
+  .admin-stats-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet (<= 992px) */
+@media (max-width: 992px) {
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform 0.25s var(--ease-smooth);
+    box-shadow: 2px 0 12px rgba(73, 48, 36, 0.12);
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .admin-sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(60, 36, 21, 0.4);
+    z-index: 45;
+  }
+
+  .admin-sidebar-close-btn {
+    display: block;
+  }
+
+  .admin-hamburger-btn {
+    display: block;
+  }
+
+  .admin-topbar {
+    padding: 0 20px;
+  }
+
+  .admin-page-content {
+    padding: 20px 20px 28px 20px;
+  }
+
+  .admin-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (<= 640px) */
+@media (max-width: 640px) {
+  .admin-stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-btn-primary {
+    justify-content: center;
+  }
+
+  .admin-user-fullname {
+    display: none;
+  }
+
+  .admin-footer-inner {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+}

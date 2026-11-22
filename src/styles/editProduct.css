@@ -1,0 +1,287 @@
+/* ==========================================================================
+   Gaya Khusus Halaman Edit Produk (Dashboard Admin Rasa Pulang)
+   Mengacu presisi pada screenshot desain: media_1795324087966_3a33f3a7.jpg
+   ========================================================================== */
+
+.edit-product-updated-text {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  margin: 0 0 4px 0;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Tata Letak Panel 4: Foto Produk (Edit Produk)
+   ========================================================================== */
+.edit-product-photos-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.edit-product-primary-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-product-primary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-product-primary-img-wrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #F0E6D7;
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-xs);
+}
+
+.edit-product-primary-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  background-color: var(--color-orange);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  letter-spacing: 0.02em;
+}
+
+.edit-product-primary-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.edit-product-btn-change-primary {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: 8px;
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.edit-product-btn-change-primary:hover {
+  background-color: #FAF4EB;
+  border-color: #D6C7B7;
+  color: var(--color-orange);
+}
+
+/* Sisi Kanan: Foto Tambahan */
+.edit-product-additional-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-product-additional-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.edit-product-additional-slot.filled {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-product-additional-img-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #F0E6D7;
+  border: 1px solid var(--color-card-border);
+}
+
+.edit-product-additional-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.edit-product-btn-delete-slot {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.edit-product-btn-delete-slot:hover {
+  background-color: #DC2626;
+  border-color: #DC2626;
+  color: #FFFFFF;
+}
+
+.edit-product-btn-make-primary {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: 6px;
+  font-family: var(--font-family-base);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  padding: 6px 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.edit-product-btn-make-primary:hover {
+  background-color: #FAF4EB;
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+.edit-product-additional-slot.empty {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 10px;
+  border: 1.5px dashed #CBB8A7;
+  background-color: #FAF6EF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 8px;
+  color: #8C7362;
+}
+
+.edit-product-additional-slot.empty:hover {
+  border-color: var(--color-orange);
+  background-color: #FBF4EB;
+  color: var(--color-orange);
+}
+
+.edit-product-empty-slot-text {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.edit-product-slot-counter {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  margin: 2px 0 0 0;
+}
+
+.edit-product-slot-info-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--color-orange);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   State Produk Tidak Ditemukan
+   ========================================================================== */
+.edit-product-not-found-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: 14px;
+  padding: 48px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 20px auto;
+  max-width: 520px;
+  box-shadow: var(--shadow-sm);
+}
+
+.edit-product-not-found-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #FDF1EA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-orange);
+}
+
+.edit-product-not-found-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+.edit-product-not-found-desc {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsivitas Tablet & Mobile (Edit Produk)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .edit-product-photos-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .edit-product-primary-card {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .edit-product-additional-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .edit-product-primary-card {
+    max-width: 100%;
+  }
+}

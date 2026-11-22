@@ -1,7 +1,18 @@
+import { useState, useEffect } from 'react';
 import { heroContent } from '../../data/homeData';
+import { getWebsiteContent, subscribeWebsiteContent } from '../../data/websiteContentStore';
 import ImageWithFallback from '../ui/ImageWithFallback';
 
 export default function HeroSection({ onContactClick }) {
+  const [content, setContent] = useState(() => getWebsiteContent().banner);
+
+  useEffect(() => {
+    const unsubscribe = subscribeWebsiteContent((latest) => {
+      setContent(latest.banner);
+    });
+    return unsubscribe;
+  }, []);
+
   const handleScrollToKatalog = (e) => {
     e.preventDefault();
     const target = document.querySelector('#katalog');
@@ -19,12 +30,10 @@ export default function HeroSection({ onContactClick }) {
             {heroContent.eyebrow}
           </p>
           <h1 className="hero-title hero-animate-title">
-            Bawa Pulang<br />
-            Camilan, Bagikan<br />
-            Kehangatan.
+            {content.title}
           </h1>
           <p className="hero-description hero-animate-desc">
-            {heroContent.description}
+            {content.intro}
           </p>
           <div className="hero-actions hero-animate-actions">
             <a
@@ -48,7 +57,7 @@ export default function HeroSection({ onContactClick }) {
         <div className="hero-image-wrapper hero-animate-image">
           <div className="hero-image-frame">
             <ImageWithFallback
-              src={heroContent.image}
+              src={content.image || heroContent.image}
               alt={heroContent.imageAlt}
               aspectRatio="16 / 11"
               placeholderLabel="Foto produk utama & hampers"

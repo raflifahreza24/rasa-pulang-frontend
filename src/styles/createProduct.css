@@ -1,0 +1,883 @@
+/* ==========================================================================
+   Gaya Halaman Tambah Produk (Dashboard Admin Rasa Pulang)
+   Mengacu presisi pada screenshot desain: media_1795321407267_86f65063.jpg
+   ========================================================================== */
+
+.create-product-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   1. Header Heading & Tombol Kembali ke Daftar
+   ========================================================================== */
+.create-product-header-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.create-product-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-product-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--color-orange);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 4px 0;
+}
+
+.create-product-page-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin: 0 0 4px 0;
+}
+
+.create-product-page-desc {
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  margin: 0 0 4px 0;
+}
+
+.create-product-required-legend {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.create-product-btn-back {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  color: var(--color-text-dark);
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.create-product-btn-back:hover {
+  background-color: #FAF4EB;
+  border-color: #D6C7B7;
+  color: var(--color-orange);
+}
+
+/* ==========================================================================
+   2. Panel Form Card (1 s/d 5)
+   ========================================================================== */
+.create-product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.create-product-card-section {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.create-product-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-bottom: 2px;
+}
+
+.create-product-section-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.create-product-section-subtitle {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.create-product-fields-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.create-product-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.create-product-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.create-product-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.create-product-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.create-product-label.photo-header {
+  margin-bottom: 2px;
+}
+
+.text-required {
+  color: #DC2626;
+}
+
+.create-product-optional-tag {
+  font-weight: 400;
+  color: var(--color-text-subtle);
+  font-size: 11.5px;
+}
+
+/* Input, Textarea, Select */
+.create-product-input,
+.create-product-textarea {
+  width: 100%;
+  padding: 9px 12px;
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  color: var(--color-text-dark);
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.create-product-input::placeholder,
+.create-product-textarea::placeholder {
+  color: var(--color-text-subtle);
+}
+
+.create-product-input:focus,
+.create-product-textarea:focus {
+  border-color: var(--color-orange);
+  box-shadow: 0 0 0 3px rgba(220, 114, 44, 0.12);
+}
+
+.create-product-input.has-error,
+.create-product-textarea.has-error {
+  border-color: #DC2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.create-product-textarea {
+  resize: vertical;
+  min-height: 78px;
+  line-height: 1.45;
+}
+
+/* Dropdown Select Wrap */
+.create-product-select-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.create-product-select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: 8px;
+  padding: 9px 34px 9px 12px;
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.create-product-select:focus {
+  border-color: var(--color-orange);
+  box-shadow: 0 0 0 3px rgba(220, 114, 44, 0.12);
+}
+
+.create-product-select.has-error {
+  border-color: #DC2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.create-product-select-chevron {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-subtle);
+  pointer-events: none;
+}
+
+/* Helpers & Errors */
+.create-product-helper-text {
+  font-size: 11.5px;
+  color: var(--color-text-subtle);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.create-product-error-text {
+  font-size: 11.5px;
+  color: #DC2626;
+  font-weight: 600;
+  margin: 0;
+}
+
+.create-product-warning-text {
+  font-size: 11.5px;
+  color: #D97706;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ==========================================================================
+   3. Visual Prefix & Suffix (Rp & gram)
+   ========================================================================== */
+.create-product-affix-wrap {
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.create-product-affix-wrap:focus-within {
+  border-color: var(--color-orange);
+  box-shadow: 0 0 0 3px rgba(220, 114, 44, 0.12);
+}
+
+.create-product-affix-wrap.has-error {
+  border-color: #DC2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.create-product-affix-label {
+  padding: 9px 14px;
+  background-color: #FAF6EF;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 700;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.create-product-affix-label.prefix {
+  border-right: 1px solid var(--color-card-border);
+}
+
+.create-product-affix-label.suffix {
+  border-left: 1px solid var(--color-card-border);
+}
+
+.create-product-input.with-prefix,
+.create-product-input.with-suffix {
+  border: none;
+  border-radius: 0;
+  box-shadow: none !important;
+  flex: 1;
+}
+
+/* ==========================================================================
+   4. Foto Produk (Foto Utama & Foto Tambahan)
+   ========================================================================== */
+.create-product-photos-layout {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.create-product-primary-photo-col {
+  width: 180px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.create-product-hidden-file {
+  display: none;
+}
+
+.create-product-primary-dropzone {
+  width: 180px;
+  height: 180px;
+  border: 1.5px dashed var(--color-card-border);
+  border-radius: 10px;
+  background-color: #FAF6EF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  text-align: center;
+  padding: 12px;
+  transition: all 0.15s ease;
+}
+
+.create-product-primary-dropzone:hover {
+  background-color: #FFF7EE;
+  border-color: var(--color-orange);
+}
+
+.create-product-primary-dropzone.has-error {
+  border-color: #DC2626;
+  background-color: #FEF2F2;
+}
+
+.create-product-dropzone-icon-wrap {
+  margin-bottom: 2px;
+}
+
+.create-product-dropzone-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.create-product-dropzone-subtitle {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.create-product-primary-preview-box {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--color-card-border);
+  position: relative;
+}
+
+.create-product-primary-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.create-product-img-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(44, 30, 22, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.create-product-primary-preview-box:hover .create-product-img-overlay {
+  opacity: 1;
+}
+
+.create-product-btn-img-action {
+  font-family: var(--font-family-base);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.create-product-btn-img-action.change {
+  background-color: #FFFFFF;
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-card-border);
+}
+
+.create-product-btn-img-action.change:hover {
+  background-color: #FAF4EB;
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+.create-product-btn-img-action.remove {
+  background-color: #DC2626;
+  color: #FFFFFF;
+  border: none;
+}
+
+.create-product-btn-img-action.remove:hover {
+  background-color: #B91C1C;
+}
+
+/* Sisi Kanan: Foto Tambahan */
+.create-product-additional-photos-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.create-product-additional-slots-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.create-product-sub-slot-wrap {
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+}
+
+.create-product-sub-dropzone {
+  width: 100%;
+  height: 100%;
+  border: 1.5px dashed var(--color-card-border);
+  border-radius: 8px;
+  background-color: #FAF6EF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.create-product-sub-dropzone:hover {
+  background-color: #FFF7EE;
+  border-color: var(--color-orange);
+}
+
+.create-product-plus-icon {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: 1;
+}
+
+.create-product-slot-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.create-product-sub-preview-box {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--color-card-border);
+  position: relative;
+}
+
+.create-product-sub-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.create-product-btn-sub-remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: rgba(44, 30, 22, 0.75);
+  color: #FFFFFF;
+  border: none;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.create-product-btn-sub-remove:hover {
+  background-color: #DC2626;
+}
+
+/* Panel Informasi Format File */
+.create-product-format-note {
+  background-color: #FAF6EF;
+  border: 1px solid #EFE4D6;
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.create-product-note-icon {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.create-product-helper-text.photo-bottom {
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   5. Pengaturan Tampilan & Switch Unggulan
+   ========================================================================== */
+.create-product-switch-row {
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.create-product-switch-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.create-product-switch-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.create-product-switch-slider {
+  width: 38px;
+  height: 22px;
+  background-color: #D1C5B8;
+  border-radius: 9999px;
+  position: relative;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.create-product-switch-slider::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.create-product-switch-input:checked + .create-product-switch-slider {
+  background-color: var(--color-orange);
+}
+
+.create-product-switch-input:checked + .create-product-switch-slider::after {
+  transform: translateX(16px);
+}
+
+.create-product-switch-slider.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.create-product-switch-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.create-product-slot-usage-text {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--color-orange);
+  margin: 0;
+}
+
+.create-product-slot-usage-text.full {
+  color: #DC2626;
+}
+
+.create-product-bottom-note {
+  background-color: #FAF6EF;
+  border: 1px solid #EFE4D6;
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   6. Bar Tombol Aksi Bawah
+   ========================================================================== */
+.create-product-actions-bar {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: 12px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.create-product-actions-hint {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.create-product-actions-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.create-product-btn-cancel {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  color: var(--color-text-dark);
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9.5px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.create-product-btn-cancel:hover {
+  background-color: #FAF4EB;
+  border-color: #D6C7B7;
+}
+
+.create-product-btn-submit {
+  background-color: var(--color-orange);
+  color: #FFFFFF;
+  border: none;
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9.5px 20px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(220, 114, 44, 0.25);
+  transition: all 0.15s ease;
+}
+
+.create-product-btn-submit:hover {
+  background-color: var(--color-orange-hover);
+  transform: translateY(-1px);
+}
+
+.create-product-btn-submit:active {
+  transform: translateY(0);
+}
+
+.create-product-btn-submit:disabled,
+.create-product-btn-cancel:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   7. Dialog Konfirmasi Perubahan Belum Disimpan
+   ========================================================================== */
+.create-product-dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(44, 30, 22, 0.45);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.create-product-dialog-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 440px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.create-product-dialog-icon-wrap.warning {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #FEF3C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-product-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.create-product-dialog-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.create-product-dialog-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.create-product-dialog-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.create-product-btn-dialog.secondary {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  color: var(--color-text-dark);
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.create-product-btn-dialog.secondary:hover {
+  background-color: #FAF4EB;
+  border-color: #D6C7B7;
+}
+
+.create-product-btn-dialog.warning {
+  background-color: #D97706;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.create-product-btn-dialog.warning:hover {
+  background-color: #B45309;
+}
+
+/* ==========================================================================
+   8. Responsif Mobile & Tablet
+   ========================================================================== */
+@media (max-width: 900px) {
+  .create-product-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .create-product-photos-layout {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .create-product-header-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .create-product-btn-back {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .create-product-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .create-product-actions-bar {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .create-product-actions-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .create-product-btn-cancel,
+  .create-product-btn-submit {
+    width: 100%;
+    justify-content: center;
+  }
+}

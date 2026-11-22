@@ -1,0 +1,608 @@
+/* ==========================================================================
+   Gaya Tampilan Modul Pengaturan Toko (Dashboard Rasa Pulang)
+   Mengikuti standar token desain, font Inter, dan tampilan visual referensi.
+   ========================================================================== */
+
+.store-settings-view {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-bottom: 96px; /* Ruang untuk sticky bottom bar */
+}
+
+/* Header Pengaturan Toko */
+.store-settings-header {
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.store-settings-header-main {
+  width: 100%;
+}
+
+.store-settings-eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-tertiary-title, #8C4417);
+  margin-bottom: 4px;
+}
+
+.store-settings-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: var(--color-text-primary, #2D2319);
+  line-height: 1.2;
+  margin-bottom: 6px;
+  font-family: inherit;
+}
+
+.store-settings-subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary, #7A6F64);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.store-settings-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.store-settings-badge-owner {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #F8EFE7;
+  color: #A64B17;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.store-settings-meta-divider {
+  color: #D5C7B7;
+  font-size: 0.875rem;
+}
+
+.store-settings-helper-text {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary, #7A6F64);
+}
+
+/* Card Sections */
+.store-settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.store-settings-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border-card, #EDE3D7);
+  border-radius: 12px;
+  padding: 24px 28px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.store-settings-card-header {
+  margin-bottom: 20px;
+}
+
+.store-settings-card-title {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #2D2319);
+  margin-bottom: 4px;
+}
+
+.store-settings-card-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #7A6F64);
+}
+
+/* Grid Identitas Toko (Nama 60%, Logo 40%) */
+.store-settings-identity-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.store-settings-form-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.store-settings-logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.store-settings-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.store-settings-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #2D2319);
+  margin-bottom: 6px;
+}
+
+.store-settings-label-inline {
+  margin-bottom: 0;
+}
+
+.store-settings-required {
+  color: #C0392B;
+}
+
+.store-settings-input,
+.store-settings-textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: var(--color-text-primary, #2D2319);
+  background-color: #FFFFFF;
+  border: 1px solid #D5C7B7;
+  border-radius: 8px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  line-height: 1.5;
+}
+
+.store-settings-input:focus,
+.store-settings-textarea:focus {
+  border-color: #DC722C;
+  box-shadow: 0 0 0 3px rgba(220, 114, 44, 0.12);
+}
+
+.store-settings-input.is-invalid,
+.store-settings-textarea.is-invalid {
+  border-color: #C0392B;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+}
+
+.store-settings-field-hint {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #7A6F64);
+  margin-top: 6px;
+}
+
+.store-settings-field-error {
+  font-size: 0.75rem;
+  color: #C0392B;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* Pratinjau Logo */
+.store-settings-logo-preview-box {
+  width: 100%;
+  height: 110px;
+  background-color: #FFFFFF;
+  border: 1px solid #EDE3D7;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.store-settings-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.store-settings-logo-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.store-settings-hidden-file {
+  display: none;
+}
+
+.store-settings-btn-upload {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 1px solid #D5C7B7;
+  color: var(--color-text-primary, #2D2319);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.store-settings-btn-upload:hover {
+  background-color: #FAF6F0;
+  border-color: #DC722C;
+  color: #DC722C;
+}
+
+.store-settings-btn-reset-logo {
+  background: none;
+  border: none;
+  color: #C0392B;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4px 6px;
+}
+
+.store-settings-btn-reset-logo:hover {
+  color: #962D22;
+}
+
+.store-settings-logo-hints {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.store-settings-hint-text {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #7A6F64);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Notice Box Beige di Dalam Card */
+.store-settings-notice-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #FBF7F0;
+  border: 1px solid #EFE4D6;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 14px;
+  font-size: 0.8125rem;
+  color: #8C4417;
+}
+
+.store-settings-notice-box-compact {
+  margin-top: 10px;
+}
+
+/* Panel 4: Kontak dan Tautan */
+.store-settings-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.store-settings-contact-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.store-settings-contact-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.store-settings-contact-label-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.store-settings-contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2D2319;
+}
+
+.store-settings-status-badge {
+  background-color: #F6EFE6;
+  color: #8C7B6D;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.store-settings-maps-action {
+  margin-top: 8px;
+}
+
+.store-settings-btn-open-maps {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #8C4417;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.store-settings-btn-open-maps:hover {
+  color: #DC722C;
+}
+
+/* Catatan Simulasi Portofolio Bawah */
+.store-settings-portfolio-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #FBF7F0;
+  border: 1px solid #EFE4D6;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.8125rem;
+  color: #8C4417;
+}
+
+/* Sticky Bottom Action Bar */
+.store-settings-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 260px; /* Lebar sidebar admin */
+  right: 0;
+  background: #FFFFFF;
+  border-top: 1px solid #E8DFD3;
+  box-shadow: 0 -4px 16px rgba(45, 35, 25, 0.05);
+  z-index: 50;
+  padding: 14px 28px;
+}
+
+@media (max-width: 1024px) {
+  .store-settings-bottom-bar {
+    left: 0;
+  }
+}
+
+.store-settings-bottom-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.store-settings-bottom-reminder {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary, #7A6F64);
+  margin: 0;
+}
+
+.store-settings-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.store-settings-btn-cancel {
+  background: #FFFFFF;
+  border: 1px solid #D5C7B7;
+  color: var(--color-text-primary, #2D2319);
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.store-settings-btn-cancel:hover:not(:disabled) {
+  background-color: #FAF6F0;
+  border-color: #BCAE9E;
+}
+
+.store-settings-btn-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #DC722C;
+  border: 1px solid #DC722C;
+  color: #FFFFFF;
+  padding: 9px 22px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(220, 114, 44, 0.2);
+  transition: all 0.2s ease;
+}
+
+.store-settings-btn-save:hover:not(:disabled) {
+  background: #C45E1B;
+  border-color: #C45E1B;
+}
+
+.store-settings-btn-save:disabled,
+.store-settings-btn-cancel:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Modal Konfirmasi Batal */
+.store-settings-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(45, 35, 25, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+.store-settings-modal-container {
+  background: #FFFFFF;
+  border: 1px solid #E8DFD3;
+  border-radius: 14px;
+  padding: 28px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(45, 35, 25, 0.15);
+  animation: modalScaleUp 0.2s ease-out;
+}
+
+.store-settings-modal-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #FDF1E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.store-settings-modal-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #2D2319);
+  margin-bottom: 8px;
+}
+
+.store-settings-modal-text {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #7A6F64);
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+
+.store-settings-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.store-settings-modal-btn-cancel {
+  flex: 1;
+  background: #FFFFFF;
+  border: 1px solid #D5C7B7;
+  color: var(--color-text-primary, #2D2319);
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.store-settings-modal-btn-cancel:hover {
+  background-color: #FAF6F0;
+}
+
+.store-settings-modal-btn-confirm {
+  flex: 1;
+  background: #DC722C;
+  border: 1px solid #DC722C;
+  color: #FFFFFF;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.store-settings-modal-btn-confirm:hover {
+  background: #C45E1B;
+  border-color: #C45E1B;
+}
+
+/* Restricted View */
+.store-settings-restricted-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  padding: 40px 16px;
+}
+
+.store-settings-restricted-card {
+  background: #FFFFFF;
+  border: 1px solid #EDE3D7;
+  border-radius: 12px;
+  padding: 36px 32px;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.store-settings-restricted-icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #FDF1E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.store-settings-restricted-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #2D2319);
+  margin-bottom: 10px;
+}
+
+.store-settings-restricted-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #7A6F64);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.store-settings-restricted-btn {
+  background: #DC722C;
+  border: 1px solid #DC722C;
+  color: #FFFFFF;
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.store-settings-restricted-btn:hover {
+  background: #C45E1B;
+}
+
+/* Responsivitas Tablet & Mobile */
+@media (max-width: 900px) {
+  .store-settings-identity-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

@@ -1,8 +1,20 @@
-import { benefitsData } from '../../data/homeData';
+import { useState, useEffect } from 'react';
+import { benefitsData as initialBenefits } from '../../data/homeData';
+import { getWebsiteContent, subscribeWebsiteContent } from '../../data/websiteContentStore';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 
 export default function BenefitsSection({ title = 'Kenapa Rasa Pulang?' }) {
   const sectionRef = useScrollReveal();
+  const [benefits, setBenefits] = useState(() => getWebsiteContent().advantages || initialBenefits);
+
+  useEffect(() => {
+    const unsubscribe = subscribeWebsiteContent((latest) => {
+      if (latest.advantages) {
+        setBenefits(latest.advantages);
+      }
+    });
+    return unsubscribe;
+  }, []);
 
   const renderIcon = (type) => {
     switch (type) {
@@ -50,10 +62,10 @@ export default function BenefitsSection({ title = 'Kenapa Rasa Pulang?' }) {
           </h2>
 
           <div className="benefits-grid">
-            {benefitsData.map((item, index) => (
+            {benefits.map((item, index) => (
               <div
-                key={item.id}
-                className={`benefit-column ${index < benefitsData.length - 1 ? 'has-divider' : ''}`}
+                key={item.id || index}
+                className={`benefit-column ${index < benefits.length - 1 ? 'has-divider' : ''}`}
               >
                 <div className="benefit-icon-wrapper">
                   {renderIcon(item.icon)}

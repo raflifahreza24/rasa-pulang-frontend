@@ -121,3 +121,67 @@
     opacity: 0.85;
   }
 }
+
+/* ==========================================================================
+   Animasi Transisi Masuk Komponen Dashboard & Angka / Nominal
+   ========================================================================== */
+
+@keyframes adminFadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes numberPopPulse {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.5;
+  }
+  60% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.anim-enter {
+  animation: adminFadeSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-stagger-1 { animation-delay: 0.04s; }
+.anim-stagger-2 { animation-delay: 0.08s; }
+.anim-stagger-3 { animation-delay: 0.12s; }
+.anim-stagger-4 { animation-delay: 0.16s; }
+.anim-stagger-5 { animation-delay: 0.20s; }
+.anim-stagger-6 { animation-delay: 0.24s; }
+.anim-stagger-7 { animation-delay: 0.28s; }
+.anim-stagger-8 { animation-delay: 0.32s; }
+
+.animated-number {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  animation: numberPopPulse 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-enter,
+  .animated-number,
+  .admin-animate-fade,
+  .hero-animate-eyebrow,
+  .hero-animate-title,
+  .hero-animate-desc,
+  .hero-animate-actions,
+  .hero-animate-image {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

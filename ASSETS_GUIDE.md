@@ -179,9 +179,57 @@ export const storeFrontPhotoData = {
 
 ---
 
-## 9. Kebutuhan Fallback Server untuk Hosting Statis
+## 9. Aset & Akun Demo Halaman Login Dashboard (`/login`)
 
-Aplikasi ini menggunakan Single Page Application (SPA) routing berbasis HTML5 History API. Jika di-deploy ke server hosting statis (seperti Netlify, Vercel, Apache, atau Nginx), pastikan konfigurasi rewrite/fallback mengarahkan semua path (misal: `/kontak`, `/tentang-kami`, `/produk/*`, dan `/katalog`) kembali ke `index.html` agar direct refresh atau akses URL langsung tidak menghasilkan status HTTP 404 dari web server:
+Halaman Login Dashboard menggunakan panel visual foto interior toko pada sisi kiri:
+
+### A. Spesifikasi Foto Interior Login
+- **Path File Rekomendasi:** `public/images/rasa-pulang/auth/login-rasa-pulang.webp`
+- **URL Path pada Komponen:** `/images/rasa-pulang/auth/login-rasa-pulang.webp`
+- **Orientasi:** Landscape / Foto Suasana Toko
+- **Rasio Aspek Rekomendasi:** Sekitar `4:3` (atau rasio landscape ~1.3:1)
+- **Dimensi Rekomendasi:** 1200 × 900 px hingga 1600 × 1200 px (minimal 800 × 600 px)
+- **Format:** WebP (sangat direkomendasikan), JPG, atau PNG
+
+### B. Konfigurasi Path & Teks Visual
+Dikelola di `src/data/demoAccounts.js`:
+```javascript
+export const loginVisualConfig = {
+  imagePath: '/images/rasa-pulang/auth/login-rasa-pulang.webp',
+  alt: 'Suasana interior toko Rasa Pulang dengan display camilan dan paket hampers cantik',
+  placeholderLabel: 'Foto interior toko',
+  title: 'Kelola katalog, sambut lebih banyak cerita.',
+  description: 'Ruang kerja pemilik dan staf untuk memperbarui produk Rasa Pulang.',
+  objectPosition: 'center',
+};
+```
+
+### C. Kredensial Akun Dummy untuk Pengujian Login
+Data akun pengujian simulasi terpusat di `src/data/demoAccounts.js`:
+
+| Peran | Nama | Email Pengujian | Password Demo | Status |
+|---|---|---|---|:---:|
+| **Pemilik** | Dina Prameswari | `pemilik@rasapulang.example` | `DemoPemilik123!` | Aktif |
+| **Staf** | Staf Rasa Pulang | `staf@rasapulang.example` | `DemoStaf123!` | Aktif |
+| **Staf Nonaktif** | Staf Nonaktif | `nonaktif@rasapulang.example` | `DemoNonaktif123!` | Nonaktif (Untuk tes penolakan) |
+
+> **Catatan Pengujian:**
+> - Email di-normalisasi secara otomatis (huruf besar/kecil tidak berpengaruh dan spasi depan/belakang di-trim).
+> - Password bersifat *case-sensitive*.
+> - Tidak ada kredensial atau token yang disimpan ke `localStorage` atau `sessionStorage`.
+
+---
+
+## 10. Cara Membuka Halaman Login
+
+- **Melalui URL Langsung:** [http://localhost:5173/login](http://localhost:5173/login)
+- Setelah login berhasil, halaman otomatis mengalihkan ke `/dashboard`.
+
+---
+
+## 11. Kebutuhan Fallback Server untuk Hosting Statis
+
+Aplikasi ini menggunakan Single Page Application (SPA) routing berbasis HTML5 History API. Jika di-deploy ke server hosting statis (seperti Netlify, Vercel, Apache, atau Nginx), pastikan konfigurasi rewrite/fallback mengarahkan semua path (misal: `/login`, `/admin`, `/dashboard`, `/kontak`, `/tentang-kami`, `/produk/*`, dan `/katalog`) kembali ke `index.html` agar direct refresh atau akses URL langsung tidak menghasilkan status HTTP 404 dari web server:
 - **Netlify (`_redirects`):** `/* /index.html 200`
 - **Vercel (`vercel.json`):** rewrites to `/index.html`
 - **Apache (`.htaccess`):** `RewriteRule ^ index.html [L]`

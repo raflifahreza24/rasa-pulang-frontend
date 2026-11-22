@@ -8,6 +8,8 @@ export const categoriesData = [
     id: 'keripik-kerupuk',
     slug: 'keripik-kerupuk',
     name: 'Keripik & Kerupuk',
+    description: 'Pilihan keripik dan kerupuk renyah.',
+    sortOrder: 1,
     isActive: true,
     image: '/images/rasa-pulang/categories/keripik-kerupuk.webp',
     alt: 'Kategori Keripik & Kerupuk Rasa Pulang',
@@ -16,6 +18,8 @@ export const categoriesData = [
     id: 'camilan-manis',
     slug: 'camilan-manis',
     name: 'Camilan Manis',
+    description: 'Camilan manis untuk setiap momen.',
+    sortOrder: 2,
     isActive: true,
     image: '/images/rasa-pulang/categories/camilan-manis.webp',
     alt: 'Kategori Camilan Manis Rasa Pulang',
@@ -24,6 +28,8 @@ export const categoriesData = [
     id: 'camilan-gurih',
     slug: 'camilan-gurih',
     name: 'Camilan Gurih',
+    description: 'Rasa gurih untuk teman bersantai.',
+    sortOrder: 3,
     isActive: true,
     image: '/images/rasa-pulang/categories/camilan-gurih.webp',
     alt: 'Kategori Camilan Gurih Rasa Pulang',
@@ -32,6 +38,8 @@ export const categoriesData = [
     id: 'oleh-oleh-daerah',
     slug: 'oleh-oleh-daerah',
     name: 'Oleh-oleh Daerah',
+    description: 'Pilihan oleh-oleh khas daerah.',
+    sortOrder: 4,
     isActive: true,
     image: '/images/rasa-pulang/categories/oleh-oleh-daerah.webp',
     alt: 'Kategori Oleh-oleh Daerah Khas Sidoarjo',
@@ -40,6 +48,8 @@ export const categoriesData = [
     id: 'paket-hampers',
     slug: 'paket-hampers',
     name: 'Paket & Hampers',
+    description: 'Paket pilihan untuk berbagi.',
+    sortOrder: 5,
     isActive: true,
     image: '/images/rasa-pulang/categories/paket-hampers.webp',
     alt: 'Kategori Paket & Hampers Rasa Pulang',
@@ -49,6 +59,26 @@ export const categoriesData = [
 /**
  * 40 Produk Simulasi Rasa Pulang lengkap dengan galeri foto, komposisi, dan daya simpan.
  */
+// Helper untuk menghasilkan ISO timestamp aktual yang stabil dan dinamis
+const _now = new Date();
+const _todayAt = (h, m) => {
+  const d = new Date(_now);
+  d.setHours(h, m, 0, 0);
+  return d.toISOString();
+};
+const _yesterdayAt = (h, m) => {
+  const d = new Date(_now);
+  d.setDate(d.getDate() - 1);
+  d.setHours(h, m, 0, 0);
+  return d.toISOString();
+};
+const _daysAgoAt = (days, h, m) => {
+  const d = new Date(_now);
+  d.setDate(d.getDate() - days);
+  d.setHours(h, m, 0, 0);
+  return d.toISOString();
+};
+
 export const productsData = [
   // 1. Produk Referensi Utama
   {
@@ -65,8 +95,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan dalam kemasan tertutup. Simpan di tempat sejuk dan kering, jauh dari sinar matahari langsung. Tutup rapat setelah dibuka.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: true,
     deletedAt: null,
     createdAt: '2026-03-01T12:00:00Z',
+    updatedAt: '2026-11-17T02:20:00Z',
     imageKey: 'keripik-pisang-original',
     alt: 'Keripik Pisang Original 250 g',
     images: [
@@ -98,13 +130,6 @@ export const productsData = [
         position: 3,
         label: 'Penyajian',
       },
-      {
-        id: 'img-1-4',
-        path: '/images/rasa-pulang/products/details/keripik-pisang-original/back.webp',
-        alt: 'Keripik Pisang Original 250 g - Foto Belakang Kemasan',
-        position: 4,
-        label: 'Foto belakang',
-      },
     ],
   },
   {
@@ -121,8 +146,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 4 bulan dalam kemasan tertutup rapat. Simpan di tempat sejuk dan kering.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: true,
     deletedAt: null,
     createdAt: '2026-02-28T12:00:00Z',
+    updatedAt: _todayAt(8, 45),
     imageKey: 'kerupuk-udang',
     alt: 'Kerupuk Udang 200 g khas Sidoarjo',
     images: [
@@ -148,9 +175,11 @@ export const productsData = [
     ingredients: 'Daging ikan bandeng, tepung beras, bawang putih, ketumbar, garam, minyak nabati.',
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan. Hindari paparan panas matahari langsung.',
     availability: 'Tersedia',
-    isPublished: true,
+    isPublished: false,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-27T12:00:00Z',
+    updatedAt: _yesterdayAt(14, 30),
     imageKey: 'bandeng-crispy',
     alt: 'Bandeng Crispy 150 g khas Sidoarjo',
     images: [
@@ -177,8 +206,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan dalam toples tertutup rapat.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: true,
     deletedAt: null,
     createdAt: '2026-02-26T12:00:00Z',
+    updatedAt: _daysAgoAt(6, 10, 0),
     imageKey: 'stik-bawang',
     alt: 'Stik Bawang Renyah 250 g',
     images: [
@@ -205,8 +236,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan dalam kemasan tertutup rapat.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: true,
     deletedAt: null,
     createdAt: '2026-02-25T12:00:00Z',
+    updatedAt: _daysAgoAt(2, 10, 0),
     imageKey: 'keripik-pisang-cokelat',
     alt: 'Keripik Pisang Cokelat 250 g',
     images: [
@@ -233,8 +266,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 2 bulan dalam toples kedap udara.',
     availability: 'Habis',
     isPublished: true,
+    isFeatured: true,
     deletedAt: null,
     createdAt: '2026-02-24T12:00:00Z',
+    updatedAt: _yesterdayAt(16, 10),
     imageKey: 'kue-semprit',
     alt: 'Kue Semprit Tradisional 250 g',
     images: [
@@ -261,8 +296,10 @@ export const productsData = [
     shelfLifeInfo: 'Daya simpan bervariasi 2-4 bulan sesuai masing-masing produk di dalamnya.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: true,
     deletedAt: null,
     createdAt: '2026-02-23T12:00:00Z',
+    updatedAt: _yesterdayAt(11, 5),
     imageKey: 'paket-oleh-oleh-keluarga',
     alt: 'Paket Oleh-oleh Keluarga Lengkap',
     images: [
@@ -289,8 +326,10 @@ export const productsData = [
     shelfLifeInfo: 'Daya simpan bervariasi sesuai produk kemasan di dalamnya.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: true,
     deletedAt: null,
     createdAt: '2026-02-22T12:00:00Z',
+    updatedAt: _daysAgoAt(5, 10, 0),
     imageKey: 'hampers-rasa-pulang',
     alt: 'Hampers Eksklusif Rasa Pulang',
     images: [
@@ -308,7 +347,7 @@ export const productsData = [
     sku: 'RP-009',
     slug: 'keripik-singkong-balado-250-g',
     name: 'Keripik Singkong Balado 250 g',
-    categoryId: 'camilan-gurih',
+    categoryId: 'keripik-kerupuk',
     price: 23000,
     netWeightGrams: 250,
     shortIntro: 'Keripik singkong renyah dengan balutan bumbu balado pedas manis gurih.',
@@ -317,8 +356,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan dalam kemasan tertutup rapat.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-21T12:00:00Z',
+    updatedAt: _daysAgoAt(6, 10, 0),
     imageKey: 'keripik-singkong-balado',
     alt: 'Keripik Singkong Balado 250 g',
     images: [
@@ -345,8 +386,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan dalam toples tertutup rapat.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-20T12:00:00Z',
+    updatedAt: _daysAgoAt(2, 10, 0),
     imageKey: 'kacang-bawang',
     alt: 'Kacang Bawang Renyah 250 g',
     images: [
@@ -373,8 +416,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 4 bulan dalam kemasan tertutup rapat.',
     availability: 'Habis',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-19T12:00:00Z',
+    updatedAt: _daysAgoAt(3, 10, 0),
     imageKey: 'kerupuk-ikan',
     alt: 'Kerupuk Ikan Gurih 200 g',
     images: [
@@ -401,8 +446,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan dalam wadah kedap udara.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-18T12:00:00Z',
+    updatedAt: _daysAgoAt(4, 10, 0),
     imageKey: 'bagelen-mentega',
     alt: 'Bagelen Mentega Renyah 200 g',
     images: [
@@ -431,8 +478,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 2 bulan dalam wadah kedap udara.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-17T12:00:00Z',
+    updatedAt: _daysAgoAt(5, 10, 0),
     imageKey: 'kue-kacang',
     alt: 'Kue Kacang Tradisional 250 g',
     images: [
@@ -459,8 +508,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 4 bulan dalam kemasan tertutup rapat.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-16T12:00:00Z',
+    updatedAt: _daysAgoAt(6, 10, 0),
     imageKey: 'kerupuk-tengiri',
     alt: 'Kerupuk Tengiri Spesial 200 g',
     images: [
@@ -487,8 +538,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-15T12:00:00Z',
+    updatedAt: _daysAgoAt(2, 10, 0),
     imageKey: 'keripik-tempe-renyah',
     alt: 'Keripik Tempe Renyah 200 g',
     images: [
@@ -514,9 +567,11 @@ export const productsData = [
     ingredients: 'Beras, bawang putih, garam, ketumbar, penyedap rasa.',
     shelfLifeInfo: 'Perkiraan daya simpan: 4 bulan.',
     availability: 'Tersedia',
-    isPublished: true,
+    isPublished: false,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-14T12:00:00Z',
+    updatedAt: _daysAgoAt(3, 10, 0),
     imageKey: 'kerupuk-puli-sidoarjo',
     alt: 'Kerupuk Puli Khas Sidoarjo 250 g',
     images: [
@@ -543,8 +598,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan.',
     availability: 'Habis',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-13T12:00:00Z',
+    updatedAt: _daysAgoAt(4, 10, 0),
     imageKey: 'keripik-sukun-gurih',
     alt: 'Keripik Sukun Gurih 200 g',
     images: [
@@ -571,8 +628,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 2 bulan dalam toples tertutup.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-12T12:00:00Z',
+    updatedAt: _daysAgoAt(5, 10, 0),
     imageKey: 'rempeyek-kacang',
     alt: 'Rempeyek Kacang Daun Jeruk 200 g',
     images: [
@@ -599,8 +658,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-11T12:00:00Z',
+    updatedAt: _daysAgoAt(6, 10, 0),
     imageKey: 'kerupuk-kulit-sapi',
     alt: 'Kerupuk Kulit Sapi Asli 150 g',
     images: [
@@ -627,8 +688,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 2 bulan di suhu ruang.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-10T12:00:00Z',
+    updatedAt: _daysAgoAt(2, 10, 0),
     imageKey: 'madumongso-khas-jatim',
     alt: 'Madumongso Manis Legit 250 g',
     images: [
@@ -643,7 +706,7 @@ export const productsData = [
   },
   {
     id: 21,
-    sku: 'RP-021',
+    sku: 'RP-051',
     slug: 'roti-sisir-mentega-250-g',
     name: 'Roti Sisir Mentega Gula 250 g',
     categoryId: 'camilan-manis',
@@ -655,8 +718,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 1 bulan dalam wadah kedap.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-09T12:00:00Z',
+    updatedAt: _daysAgoAt(3, 10, 0),
     imageKey: 'roti-sisir-mentega',
     alt: 'Roti Sisir Mentega Gula 250 g',
     images: [
@@ -671,7 +736,7 @@ export const productsData = [
   },
   {
     id: 22,
-    sku: 'RP-022',
+    sku: 'RP-052',
     slug: 'jenang-kudus-wijen-250-g',
     name: 'Jenang Wijen Manis Legit 250 g',
     categoryId: 'camilan-manis',
@@ -683,8 +748,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 2 bulan.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-08T12:00:00Z',
+    updatedAt: _daysAgoAt(4, 10, 0),
     imageKey: 'jenang-kudus-wijen',
     alt: 'Jenang Wijen Manis Legit 250 g',
     images: [
@@ -699,7 +766,7 @@ export const productsData = [
   },
   {
     id: 23,
-    sku: 'RP-023',
+    sku: 'RP-053',
     slug: 'pia-basah-cokelat-keju-300-g',
     name: 'Pia Basah Cokelat Keju 300 g',
     categoryId: 'camilan-manis',
@@ -711,8 +778,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 14 hari di suhu ruang, 1 bulan di lemari es.',
     availability: 'Habis',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-07T12:00:00Z',
+    updatedAt: _daysAgoAt(5, 10, 0),
     imageKey: 'pia-basah-cokelat-keju',
     alt: 'Pia Basah Cokelat Keju 300 g',
     images: [
@@ -727,10 +796,10 @@ export const productsData = [
   },
   {
     id: 24,
-    sku: 'RP-024',
+    sku: 'RP-054',
     slug: 'ladu-manis-ketan-200-g',
     name: 'Ladu Manis Ketan 200 g',
-    categoryId: 'camilan-manis',
+    categoryId: 'keripik-kerupuk',
     price: 20000,
     netWeightGrams: 200,
     shortIntro: 'Kue manis tradisional berbahan beras ketan sangrai yang renyah harum.',
@@ -739,8 +808,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 2 bulan.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-06T12:00:00Z',
+    updatedAt: _daysAgoAt(6, 10, 0),
     imageKey: 'ladu-manis-ketan',
     alt: 'Ladu Manis Ketan 200 g',
     images: [
@@ -766,9 +837,11 @@ export const productsData = [
     ingredients: 'Telur, tepung terigu, gula pasir, vanila, margarin.',
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan.',
     availability: 'Tersedia',
-    isPublished: true,
+    isPublished: false,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-05T12:00:00Z',
+    updatedAt: _daysAgoAt(2, 10, 0),
     imageKey: 'bolu-kering-mini',
     alt: 'Bolu Kering Mini 200 g',
     images: [
@@ -795,8 +868,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-04T12:00:00Z',
+    updatedAt: _daysAgoAt(3, 10, 0),
     imageKey: 'kacang-telur-spesial',
     alt: 'Kacang Telur Spesial 250 g',
     images: [
@@ -823,8 +898,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-03T12:00:00Z',
+    updatedAt: _daysAgoAt(4, 10, 0),
     imageKey: 'pastel-kering-abon-sapi',
     alt: 'Pastel Kering Abon Sapi 200 g',
     images: [
@@ -851,8 +928,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-02T12:00:00Z',
+    updatedAt: _daysAgoAt(5, 10, 0),
     imageKey: 'pangsit-goreng-renyah',
     alt: 'Pangsit Goreng Renyah 200 g',
     images: [
@@ -879,8 +958,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-02-01T12:00:00Z',
+    updatedAt: _daysAgoAt(6, 10, 0),
     imageKey: 'emping-melinjo-manis-pedas',
     alt: 'Emping Melinjo Manis Pedas 200 g',
     images: [
@@ -906,9 +987,11 @@ export const productsData = [
     ingredients: 'Jagung, bawang putih, garam, minyak kelapa sawit.',
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan.',
     availability: 'Tersedia',
-    isPublished: true,
+    isPublished: false,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-01-31T12:00:00Z',
+    updatedAt: _daysAgoAt(2, 10, 0),
     imageKey: 'marning-jagung-gurih',
     alt: 'Marning Jagung Gurih 250 g',
     images: [
@@ -933,10 +1016,12 @@ export const productsData = [
     description: 'Kacang mete pilihan berkualitas utuh super, dipanggang matang dengan rempah bawang gurih.',
     ingredients: 'Kacang mete, bawang putih, garam, minyak nabati.',
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan.',
-    availability: 'Habis',
+    availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-01-30T12:00:00Z',
+    updatedAt: _daysAgoAt(3, 10, 0),
     imageKey: 'kacang-mede-asin-bawang',
     alt: 'Kacang Mede Asin Bawang 200 g',
     images: [
@@ -963,8 +1048,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 7 hari di suhu ruang, 1 bulan di lemari es.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-01-29T12:00:00Z',
+    updatedAt: _daysAgoAt(4, 10, 0),
     imageKey: 'bandeng-asap-khas-sidoarjo',
     alt: 'Bandeng Asap Khas Sidoarjo 300 g',
     images: [
@@ -991,8 +1078,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 6 bulan di tempat sejuk.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-01-28T12:00:00Z',
+    updatedAt: _daysAgoAt(5, 10, 0),
     imageKey: 'petis-udang-super-sidoarjo',
     alt: 'Petis Udang Super Sidoarjo 250 g',
     images: [
@@ -1019,8 +1108,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan dalam kemasan botol bersegel.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-01-27T12:00:00Z',
+    updatedAt: _daysAgoAt(6, 10, 0),
     imageKey: 'sambal-petis-asli-sidoarjo',
     alt: 'Sambal Petis Asli Sidoarjo 200 g',
     images: [
@@ -1046,9 +1137,11 @@ export const productsData = [
     ingredients: 'Udang rebon murni, garam.',
     shelfLifeInfo: 'Perkiraan daya simpan: 6 bulan dalam wadah kedap.',
     availability: 'Tersedia',
-    isPublished: true,
+    isPublished: false,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-01-26T12:00:00Z',
+    updatedAt: _daysAgoAt(2, 10, 0),
     imageKey: 'terasi-udang-matang',
     alt: 'Terasi Udang Matang 150 g',
     images: [
@@ -1073,10 +1166,12 @@ export const productsData = [
     description: 'Daging ikan bandeng halus dibumbui santan kelapa dan rempah tradisional, dikukus hingga matang sempurna tanpa duri.',
     ingredients: 'Daging bandeng, santan, telur, bawang merah, bawang putih, rempah-rempah.',
     shelfLifeInfo: 'Perkiraan daya simpan: 7 hari di suhu ruang, 1 bulan di freezer.',
-    availability: 'Habis',
+    availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-01-25T12:00:00Z',
+    updatedAt: _daysAgoAt(3, 10, 0),
     imageKey: 'otak-otak-bandeng-siap-saji',
     alt: 'Otak-otak Bandeng 250 g',
     images: [
@@ -1094,7 +1189,7 @@ export const productsData = [
     sku: 'RP-037',
     slug: 'krupuk-kupang-khas-sidoarjo-200-g',
     name: 'Krupuk Kupang Khas Sidoarjo 200 g',
-    categoryId: 'oleh-oleh-daerah',
+    categoryId: 'keripik-kerupuk',
     price: 27000,
     netWeightGrams: 200,
     shortIntro: 'Kerupuk unik berbahan kerang kupang pesisir Sidoarjo yang gurih renyah.',
@@ -1103,8 +1198,10 @@ export const productsData = [
     shelfLifeInfo: 'Perkiraan daya simpan: 4 bulan.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-01-24T12:00:00Z',
+    updatedAt: _daysAgoAt(4, 10, 0),
     imageKey: 'krupuk-kupang-khas-sidoarjo',
     alt: 'Krupuk Kupang Khas Sidoarjo 200 g',
     images: [
@@ -1131,8 +1228,10 @@ export const productsData = [
     shelfLifeInfo: 'Daya simpan bervariasi 2-3 bulan.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-01-23T12:00:00Z',
+    updatedAt: _daysAgoAt(5, 10, 0),
     imageKey: 'paket-camilan-sore-berdua',
     alt: 'Paket Camilan Sore Berdua',
     images: [
@@ -1150,7 +1249,7 @@ export const productsData = [
     sku: 'RP-039',
     slug: 'paket-oleh-oleh-gurih-renyah',
     name: 'Paket Oleh-oleh Gurih Renyah',
-    categoryId: 'paket-hampers',
+    categoryId: 'keripik-kerupuk',
     price: 95000,
     netWeightGrams: 800,
     shortIntro: 'Kombinasi 4 macam camilan gurih khas Sidoarjo dalam tas jinjing ramah lingkungan.',
@@ -1159,8 +1258,10 @@ export const productsData = [
     shelfLifeInfo: 'Daya simpan 3-4 bulan.',
     availability: 'Tersedia',
     isPublished: true,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-01-22T12:00:00Z',
+    updatedAt: _daysAgoAt(6, 10, 0),
     imageKey: 'paket-oleh-oleh-gurih-renyah',
     alt: 'Paket Oleh-oleh Gurih Renyah',
     images: [
@@ -1186,9 +1287,11 @@ export const productsData = [
     ingredients: null,
     shelfLifeInfo: 'Daya simpan bervariasi sesuai produk di dalamnya.',
     availability: 'Tersedia',
-    isPublished: true,
+    isPublished: false,
+    isFeatured: false,
     deletedAt: null,
     createdAt: '2026-01-21T12:00:00Z',
+    updatedAt: _daysAgoAt(2, 10, 0),
     imageKey: 'hampers-premium-khas-delta',
     alt: 'Hampers Premium Khas Delta Sidoarjo',
     images: [
@@ -1196,6 +1299,131 @@ export const productsData = [
         id: 'img-40-0',
         path: '/images/rasa-pulang/products/hampers-premium-khas-delta.webp',
         alt: 'Hampers Premium Khas Delta Sidoarjo',
+        position: 0,
+        label: 'Foto produk',
+      },
+    ],
+  },
+
+  // ==========================================================================
+  // Fixture Produk di Tempat Sampah (deletedAt !== null)
+  // Menampilkan 4 produk terhapus sesuai desain acuan media_1795325396620_593c0ace.jpg
+  // ==========================================================================
+  {
+    id: 41,
+    sku: 'RP-021',
+    slug: 'keripik-singkong-original-250-g',
+    name: 'Keripik Singkong Original 250 g',
+    categoryId: 'keripik-kerupuk',
+    price: 20000,
+    netWeightGrams: 250,
+    shortIntro: 'Keripik singkong gurih renyah dengan bumbu bawang putih khas.',
+    description: 'Keripik singkong renyah gurih bumbu bawang original khas Sidoarjo.',
+    ingredients: 'Singkong pilihan, bawang putih, garam, minyak nabati.',
+    shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan.',
+    availability: 'Tersedia',
+    isPublished: true,
+    isFeatured: false,
+    deletedAt: '2026-11-16T08:30:00Z', // 16 November 2026, 15.30 WIB
+    createdAt: '2026-01-15T10:00:00Z',
+    updatedAt: '2026-11-16T08:30:00Z',
+    imageKey: 'keripik-singkong-original',
+    alt: 'Keripik Singkong Original 250 g',
+    images: [
+      {
+        id: 'img-41-0',
+        path: '/images/rasa-pulang/products/keripik-singkong-original.webp',
+        alt: 'Keripik Singkong Original 250 g',
+        position: 0,
+        label: 'Foto produk',
+      },
+    ],
+  },
+  {
+    id: 42,
+    sku: 'RP-022',
+    slug: 'kacang-bawang-250-g',
+    name: 'Kacang Bawang 250 g',
+    categoryId: 'camilan-gurih',
+    price: 24000,
+    netWeightGrams: 250,
+    shortIntro: 'Kacang tanah gurih empuk bertabur irisan bawang putih renyah.',
+    description: 'Kacang tanah gurih empuk bertabur irisan bawang putih goreng renyah.',
+    ingredients: 'Kacang tanah, bawang putih, santan, garam, minyak nabati.',
+    shelfLifeInfo: 'Perkiraan daya simpan: 2 bulan.',
+    availability: 'Tersedia',
+    isPublished: true,
+    isFeatured: false,
+    deletedAt: '2026-11-15T03:15:00Z', // 15 November 2026, 10.15 WIB
+    createdAt: '2026-01-16T10:00:00Z',
+    updatedAt: '2026-11-15T03:15:00Z',
+    imageKey: 'kacang-bawang',
+    alt: 'Kacang Bawang 250 g',
+    images: [
+      {
+        id: 'img-42-0',
+        path: '/images/rasa-pulang/products/kacang-bawang.webp',
+        alt: 'Kacang Bawang 250 g',
+        position: 0,
+        label: 'Foto produk',
+      },
+    ],
+  },
+  {
+    id: 43,
+    sku: 'RP-023',
+    slug: 'kue-kacang-250-g',
+    name: 'Kue Kacang 250 g',
+    categoryId: 'camilan-manis',
+    price: 29000,
+    netWeightGrams: 250,
+    shortIntro: 'Kue kering kacang tanah gurih manis lembut meleleh di mulut.',
+    description: 'Kue kering kacang tanah gurih manis lembut meleleh di mulut.',
+    ingredients: 'Kacang tanah sangrai, tepung terigu, gula halus, minyak nabati, garam.',
+    shelfLifeInfo: 'Perkiraan daya simpan: 3 bulan dalam toples tertutup.',
+    availability: 'Tersedia',
+    isPublished: true,
+    isFeatured: false,
+    deletedAt: '2026-11-14T07:05:00Z', // 14 November 2026, 14.05 WIB
+    createdAt: '2026-01-17T10:00:00Z',
+    updatedAt: '2026-11-14T07:05:00Z',
+    imageKey: 'kue-kacang',
+    alt: 'Kue Kacang 250 g',
+    images: [
+      {
+        id: 'img-43-0',
+        path: '/images/rasa-pulang/products/kue-kacang.webp',
+        alt: 'Kue Kacang 250 g',
+        position: 0,
+        label: 'Foto produk',
+      },
+    ],
+  },
+  {
+    id: 44,
+    sku: 'RP-024',
+    slug: 'paket-oleh-oleh-mini',
+    name: 'Paket Oleh-oleh Mini',
+    categoryId: 'paket-hampers',
+    price: 75000,
+    netWeightGrams: 500,
+    shortIntro: 'Paket hemat camilan khas Sidoarjo dalam tas jinjing praktis.',
+    description: 'Paket hemat camilan khas Sidoarjo dalam tas jinjing praktis untuk buah tangan.',
+    ingredients: 'Kombinasi kerupuk udang, keripik pisang, dan sambal petis mini.',
+    shelfLifeInfo: 'Perkiraan daya simpan: 2 bulan.',
+    availability: 'Tersedia',
+    isPublished: true,
+    isFeatured: false,
+    deletedAt: '2026-11-13T02:40:00Z', // 13 November 2026, 09.40 WIB
+    createdAt: '2026-01-18T10:00:00Z',
+    updatedAt: '2026-11-13T02:40:00Z',
+    imageKey: 'paket-oleh-oleh-mini',
+    alt: 'Paket Oleh-oleh Mini',
+    images: [
+      {
+        id: 'img-44-0',
+        path: '/images/rasa-pulang/products/paket-oleh-oleh-mini.webp',
+        alt: 'Paket Oleh-oleh Mini',
         position: 0,
         label: 'Foto produk',
       },
