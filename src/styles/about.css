@@ -1,0 +1,353 @@
+/* ==========================================================================
+   Tata Letak dan Komponen Halaman Tentang Kami Rasa Pulang
+   ========================================================================== */
+
+.about-main-content {
+  padding-top: 24px;
+  padding-bottom: 64px;
+  min-height: 70vh;
+}
+
+/* ==========================================================================
+   Breadcrumb & Pengantar
+   ========================================================================== */
+.about-intro-section {
+  margin-bottom: 24px;
+}
+
+.about-breadcrumb-nav {
+  margin-bottom: 12px;
+}
+
+.about-intro-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-intro-eyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-orange);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.about-page-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
+}
+
+.about-page-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  max-width: 680px;
+}
+
+/* ==========================================================================
+   Foto Toko Landscape Besar (2.1:1)
+   ========================================================================== */
+.about-store-photo-wrapper {
+  margin-bottom: 56px;
+  width: 100%;
+}
+
+.about-store-photo-frame {
+  width: 100%;
+  aspect-ratio: 2.1 / 1;
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-cream-surface);
+}
+
+/* ==========================================================================
+   Cerita Usaha 2 Kolom (40% : 60%)
+   ========================================================================== */
+.about-brand-story-section {
+  margin-bottom: 64px;
+}
+
+.brand-story-grid {
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.story-left-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.story-label {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-orange);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.story-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+
+.story-simulation-pill {
+  display: inline-flex;
+  align-self: flex-start;
+  background-color: var(--color-cream-surface);
+  border: 1px solid var(--color-cream-border);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-subtle);
+}
+
+.story-right-col {
+  border-left: 1px solid var(--color-card-border);
+  padding-left: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.story-paragraph {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Pilihan Pembelian (Satuan & Hampers)
+   ========================================================================== */
+.about-purchase-options-section {
+  margin-bottom: 64px;
+}
+
+.purchase-options-header {
+  margin-bottom: 24px;
+}
+
+.purchase-options-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.purchase-options-description {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 680px;
+}
+
+.purchase-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.purchase-option-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.purchase-card-image-box {
+  width: 100%;
+  aspect-ratio: 1.8 / 1;
+  overflow: hidden;
+  background-color: var(--color-cream-surface);
+}
+
+.purchase-card-content {
+  padding: 24px;
+}
+
+.purchase-card-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  margin-bottom: 6px;
+}
+
+.purchase-card-description {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Panel Call to Action (CTA) Penutup
+   ========================================================================== */
+.about-cta-section {
+  margin-bottom: 64px;
+}
+
+.about-cta-panel {
+  background-color: var(--color-cream-surface);
+  border: 1px solid var(--color-cream-border);
+  border-radius: var(--border-radius-xl);
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.about-cta-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.about-cta-description {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 24px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.about-cta-primary-btn {
+  background-color: var(--color-orange);
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(220, 114, 44, 0.25);
+}
+
+.about-cta-secondary-btn {
+  background-color: transparent;
+  border: 1.5px solid var(--color-orange);
+  color: var(--color-orange);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 11px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   Animasi Halus Pembukaan Halaman Tentang Kami
+   ========================================================================== */
+.about-animate-header {
+  animation: heroFadeUp 0.5s var(--ease-smooth) 0.05s both;
+}
+
+.about-animate-photo {
+  animation: heroFadeUp 0.6s var(--ease-smooth) 0.12s both;
+}
+
+/* ==========================================================================
+   Responsivitas Halaman Tentang Kami
+   ========================================================================== */
+
+/* Tablet (<= 1024px) */
+@media (max-width: 1024px) {
+  .brand-story-grid {
+    gap: 32px;
+  }
+
+  .story-right-col {
+    padding-left: 32px;
+  }
+
+  .story-title {
+    font-size: 28px;
+  }
+}
+
+/* Tablet Kecil & Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .about-main-content {
+    padding-top: 16px;
+    padding-bottom: 40px;
+  }
+
+  .about-page-title {
+    font-size: 30px;
+  }
+
+  .about-store-photo-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .brand-story-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .story-right-col {
+    border-left: none;
+    border-top: 1px solid var(--color-card-border);
+    padding-left: 0;
+    padding-top: 24px;
+  }
+
+  .purchase-options-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-cta-panel {
+    padding: 32px 20px;
+  }
+
+  .about-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .about-cta-primary-btn,
+  .about-cta-secondary-btn {
+    min-height: 48px;
+    justify-content: center;
+  }
+}
+
+/* Mobile Kecil (<= 420px) */
+@media (max-width: 420px) {
+  .about-page-title {
+    font-size: 26px;
+  }
+
+  .story-title {
+    font-size: 24px;
+  }
+}

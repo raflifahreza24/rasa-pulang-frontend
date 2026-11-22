@@ -1,0 +1,465 @@
+/* ==========================================================================
+   Tata Letak dan Komponen Halaman Katalog Produk Rasa Pulang
+   ========================================================================== */
+
+.catalog-main-content {
+  padding-top: 24px;
+  padding-bottom: 56px;
+  min-height: 70vh;
+}
+
+/* ==========================================================================
+   Breadcrumb & Header Area
+   ========================================================================== */
+.catalog-header-area {
+  margin-bottom: 24px;
+}
+
+.catalog-breadcrumb {
+  margin-bottom: 12px;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+}
+
+.breadcrumb-link {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s var(--ease-smooth);
+}
+
+.breadcrumb-link:hover {
+  color: var(--color-orange);
+}
+
+.breadcrumb-separator {
+  margin: 0 8px;
+  color: #B5A597;
+  user-select: none;
+}
+
+.breadcrumb-current {
+  color: var(--color-text-dark);
+  font-weight: 600;
+}
+
+.catalog-page-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.catalog-page-description {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Toolbar Pencarian, Pengurutan, dan Filter Kategori
+   ========================================================================== */
+.catalog-toolbar-wrapper {
+  margin-bottom: 24px;
+}
+
+.catalog-toolbar-panel {
+  background-color: var(--color-cream-surface);
+  border: 1px solid var(--color-cream-border);
+  border-radius: var(--border-radius-xl);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Baris 1: Pencarian & Pengurutan */
+.toolbar-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.search-input-container {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.search-input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--color-text-subtle);
+  pointer-events: none;
+}
+
+.search-input-field {
+  width: 100%;
+  height: 42px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-md);
+  padding: 0 38px 0 42px;
+  font-size: 14px;
+  color: var(--color-text-dark);
+  transition: border-color 0.2s var(--ease-smooth), box-shadow 0.2s var(--ease-smooth);
+}
+
+.search-input-field:focus {
+  outline: none;
+  border-color: var(--color-orange);
+  box-shadow: 0 0 0 3px rgba(220, 114, 44, 0.15);
+}
+
+.search-input-field::placeholder {
+  color: var(--color-text-subtle);
+  opacity: 0.85;
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--color-text-subtle);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: color 0.2s;
+}
+
+.search-clear-btn:hover {
+  color: var(--color-orange);
+}
+
+/* Dropdown Pengurutan */
+.sort-select-container {
+  flex-shrink: 0;
+}
+
+.sort-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-md);
+  padding: 0 32px 0 14px;
+  height: 42px;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease-smooth);
+}
+
+.sort-select-wrapper:hover {
+  border-color: var(--color-card-border-hover);
+}
+
+.sort-select-wrapper:focus-within {
+  border-color: var(--color-orange);
+  box-shadow: 0 0 0 3px rgba(220, 114, 44, 0.15);
+}
+
+.sort-select-prefix {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-right: 6px;
+  white-space: nowrap;
+}
+
+.sort-select-field {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  outline: none;
+  padding-right: 4px;
+}
+
+.sort-select-arrow {
+  position: absolute;
+  right: 10px;
+  color: var(--color-text-subtle);
+  pointer-events: none;
+}
+
+/* Baris 2: Kategori Pills */
+.toolbar-bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(228, 213, 194, 0.7);
+}
+
+.category-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+.category-pills-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.category-filter-pill {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-smooth);
+  white-space: nowrap;
+}
+
+.category-filter-pill:hover:not(.active) {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+.category-filter-pill.active {
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+  color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(220, 114, 44, 0.25);
+}
+
+/* Jumlah Hasil */
+.catalog-results-count {
+  margin-top: 16px;
+  margin-bottom: 20px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Grid Produk Katalog (4 Kolom x 3 Baris)
+   ========================================================================== */
+.catalog-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.catalog-product-card {
+  animation: heroFadeUp 0.4s var(--ease-smooth) both;
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+.catalog-pagination-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 36px;
+  margin-bottom: 56px;
+}
+
+.pagination-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-smooth);
+}
+
+.pagination-btn:hover:not(:disabled):not(.active) {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+.pagination-btn.active {
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(220, 114, 44, 0.25);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.pagination-arrow-btn {
+  padding: 0 6px;
+}
+
+/* ==========================================================================
+   Empty State
+   ========================================================================== */
+.catalog-empty-state {
+  background-color: var(--color-cream-surface);
+  border: 1px solid var(--color-cream-border);
+  border-radius: var(--border-radius-xl);
+  padding: 56px 24px;
+  text-align: center;
+  margin: 24px 0 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-state-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--color-orange-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.empty-state-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+}
+
+.empty-state-description {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  max-width: 420px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.empty-state-reset-btn {
+  background-color: var(--color-orange);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Animasi Halus Pembukaan Halaman Katalog
+   ========================================================================== */
+.catalog-animate-header {
+  animation: heroFadeUp 0.5s var(--ease-smooth) 0.05s both;
+}
+
+.catalog-animate-toolbar {
+  animation: heroFadeUp 0.5s var(--ease-smooth) 0.12s both;
+}
+
+/* ==========================================================================
+   Responsivitas Katalog
+   ========================================================================== */
+
+/* Tablet & Layar Menengah (<= 1024px) */
+@media (max-width: 1024px) {
+  .catalog-product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Tablet Kecil & Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .catalog-main-content {
+    padding-top: 16px;
+    padding-bottom: 40px;
+  }
+
+  .catalog-page-title {
+    font-size: 30px;
+  }
+
+  .catalog-toolbar-panel {
+    padding: 18px 16px;
+    gap: 14px;
+  }
+
+  .toolbar-top-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .sort-select-wrapper {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .toolbar-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .catalog-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .pagination-btn {
+    min-width: 44px;
+    height: 44px;
+  }
+}
+
+/* Mobile Kecil (<= 420px) */
+@media (max-width: 420px) {
+  .catalog-page-title {
+    font-size: 26px;
+  }
+
+  .catalog-product-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .category-filter-pill {
+    padding: 6px 14px;
+    font-size: 12.5px;
+  }
+}

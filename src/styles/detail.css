@@ -1,0 +1,444 @@
+/* ==========================================================================
+   Tata Letak dan Komponen Halaman Detail Produk Rasa Pulang
+   ========================================================================== */
+
+.product-detail-main {
+  padding-top: 24px;
+  padding-bottom: 56px;
+  min-height: 70vh;
+}
+
+/* ==========================================================================
+   Breadcrumb
+   ========================================================================== */
+.product-breadcrumb-nav {
+  margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   Bagian Utama Produk: Layout 2 Kolom Desktop
+   ========================================================================== */
+.product-primary-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+/* Kolom Kiri: Galeri Foto */
+.product-gallery-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.main-image-viewport {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-cream-surface);
+}
+
+.main-image-inner {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.2s var(--ease-smooth);
+}
+
+.main-image-inner.image-fading {
+  opacity: 0.15;
+}
+
+.gallery-thumbnails-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.gallery-thumb-btn {
+  flex: 1 1 0;
+  min-width: 60px;
+  max-width: 90px;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--border-radius-md);
+  border: 1.5px solid var(--color-card-border);
+  background-color: #FAF6EF;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease-smooth), box-shadow 0.2s var(--ease-smooth), transform 0.2s var(--ease-smooth);
+}
+
+.gallery-thumb-btn:hover:not(.thumb-active) {
+  border-color: var(--color-orange);
+  transform: translateY(-2px);
+}
+
+.gallery-thumb-btn.thumb-active {
+  border: 2.5px solid var(--color-orange);
+  box-shadow: 0 2px 8px rgba(220, 114, 44, 0.3);
+}
+
+.thumb-image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+/* Kolom Kanan: Ringkasan Produk & Pemesanan */
+.product-summary-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-category-badge {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-orange);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.summary-product-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-bottom: 16px;
+}
+
+.summary-price-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.summary-product-price {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--color-orange);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.summary-price-unit {
+  font-size: 14px;
+  color: var(--color-text-subtle);
+  margin-top: 4px;
+}
+
+.summary-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.summary-weight-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.summary-meta-divider {
+  color: var(--color-cream-border);
+  font-weight: 300;
+  user-select: none;
+}
+
+.summary-short-intro {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+}
+
+.summary-action-wrapper {
+  margin-bottom: 12px;
+}
+
+.summary-whatsapp-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--color-orange);
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 4px 14px rgba(220, 114, 44, 0.28);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s var(--ease-smooth);
+}
+
+.summary-order-note {
+  font-size: 13px;
+  color: var(--color-text-subtle);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Panel Informasi Produk (Deskripsi, Komposisi, Daya Simpan)
+   ========================================================================== */
+.product-info-panel {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-xl);
+  padding: 32px 36px;
+  margin-bottom: 56px;
+  box-shadow: var(--shadow-sm);
+}
+
+.info-subsection-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.info-subsection-text {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.info-subsection.has-top-divider {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-card-border);
+}
+
+.shelf-life-notice-box {
+  margin-top: 16px;
+  background-color: var(--color-cream-notice);
+  border: 1px solid var(--color-cream-border);
+  border-radius: var(--border-radius-md);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.notice-info-icon {
+  flex-shrink: 0;
+  color: var(--color-text-dark);
+  opacity: 0.85;
+}
+
+.notice-info-text {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   Seksi Produk Terkait ("Camilan Manis Lainnya")
+   ========================================================================== */
+.related-products-section {
+  margin-bottom: 64px;
+}
+
+.related-header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.related-section-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.related-section-subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.related-see-all-link {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--color-orange);
+  text-decoration: none;
+  transition: color 0.2s var(--ease-smooth);
+}
+
+.related-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ==========================================================================
+   State Produk Tidak Ditemukan
+   ========================================================================== */
+.product-not-found-wrapper {
+  background-color: var(--color-cream-surface);
+  border: 1px solid var(--color-cream-border);
+  border-radius: var(--border-radius-xl);
+  padding: 64px 24px;
+  text-align: center;
+  margin: 32px 0 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.not-found-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--color-orange-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.not-found-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+}
+
+.not-found-desc {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  max-width: 440px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.not-found-btn {
+  background-color: var(--color-orange);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+/* ==========================================================================
+   Animasi Halus Halaman Detail
+   ========================================================================== */
+.detail-animate-header {
+  animation: heroFadeUp 0.45s var(--ease-smooth) 0.04s both;
+}
+
+.detail-animate-gallery {
+  animation: heroFadeUp 0.5s var(--ease-smooth) 0.1s both;
+}
+
+.detail-animate-summary {
+  animation: heroFadeUp 0.5s var(--ease-smooth) 0.16s both;
+}
+
+.detail-animate-panel {
+  animation: heroFadeUp 0.55s var(--ease-smooth) 0.22s both;
+}
+
+.detail-animate-related {
+  animation: heroFadeUp 0.55s var(--ease-smooth) 0.28s both;
+}
+
+/* ==========================================================================
+   Responsivitas Halaman Detail
+   ========================================================================== */
+
+/* Tablet (<= 1024px) */
+@media (max-width: 1024px) {
+  .product-primary-layout {
+    gap: 32px;
+  }
+
+  .summary-product-title {
+    font-size: 30px;
+  }
+
+  .summary-product-price {
+    font-size: 32px;
+  }
+
+  .related-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet Kecil & Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .product-detail-main {
+    padding-top: 16px;
+    padding-bottom: 40px;
+  }
+
+  .product-primary-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 36px;
+  }
+
+  .summary-product-title {
+    font-size: 26px;
+  }
+
+  .summary-product-price {
+    font-size: 28px;
+  }
+
+  .product-info-panel {
+    padding: 24px 20px;
+    margin-bottom: 40px;
+  }
+
+  .related-section-title {
+    font-size: 22px;
+  }
+
+  .related-header-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .related-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .summary-whatsapp-btn {
+    min-height: 48px;
+  }
+}
+
+/* Mobile Kecil (<= 420px) */
+@media (max-width: 420px) {
+  .gallery-thumbnails-row {
+    gap: 8px;
+  }
+
+  .gallery-thumb-btn {
+    min-width: 52px;
+  }
+
+  .related-product-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

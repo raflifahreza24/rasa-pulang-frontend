@@ -1,0 +1,123 @@
+/* Keyframes untuk Hero Load */
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroImageFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes toastFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Staggered classes untuk Hero */
+.hero-animate-eyebrow {
+  animation: heroFadeUp 0.65s var(--ease-smooth) 0.05s both;
+}
+
+.hero-animate-title {
+  animation: heroFadeUp 0.65s var(--ease-smooth) 0.15s both;
+}
+
+.hero-animate-desc {
+  animation: heroFadeUp 0.65s var(--ease-smooth) 0.25s both;
+}
+
+.hero-animate-actions {
+  animation: heroFadeUp 0.65s var(--ease-smooth) 0.35s both;
+}
+
+.hero-animate-image {
+  animation: heroImageFade 0.75s var(--ease-smooth) 0.2s both;
+}
+
+/* Scroll Reveal Base */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s var(--ease-smooth), transform 0.55s var(--ease-smooth);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger transition delays untuk kartu-kartu */
+.stagger-1 { transition-delay: 0.04s; }
+.stagger-2 { transition-delay: 0.09s; }
+.stagger-3 { transition-delay: 0.14s; }
+.stagger-4 { transition-delay: 0.19s; }
+.stagger-5 { transition-delay: 0.24s; }
+.stagger-6 { transition-delay: 0.29s; }
+.stagger-7 { transition-delay: 0.34s; }
+.stagger-8 { transition-delay: 0.39s; }
+
+/* Hover Effects yang hanya aktif pada pointer yang mendukung hover */
+@media (hover: hover) {
+  .hover-card-lift {
+    transition: transform 0.25s var(--ease-smooth), box-shadow 0.25s var(--ease-smooth), border-color 0.25s var(--ease-smooth);
+  }
+
+  .hover-card-lift:hover {
+    transform: translateY(-3.5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-card-border-hover);
+  }
+
+  .hover-card-lift:hover img {
+    transform: scale(1.03);
+  }
+
+  .hover-button-solid {
+    transition: background-color 0.2s var(--ease-smooth), transform 0.2s var(--ease-smooth), box-shadow 0.2s var(--ease-smooth);
+  }
+
+  .hover-button-solid:hover {
+    background-color: var(--color-orange-hover) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(220, 114, 44, 0.25);
+  }
+
+  .hover-button-outline {
+    transition: all 0.2s var(--ease-smooth);
+  }
+
+  .hover-button-outline:hover {
+    background-color: var(--color-orange) !important;
+    color: #FFFFFF !important;
+    border-color: var(--color-orange) !important;
+  }
+
+  .hover-link-orange {
+    transition: color 0.2s var(--ease-smooth), opacity 0.2s var(--ease-smooth);
+  }
+
+  .hover-link-orange:hover {
+    color: var(--color-orange-hover) !important;
+    opacity: 0.85;
+  }
+}

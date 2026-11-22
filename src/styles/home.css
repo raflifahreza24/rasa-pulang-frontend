@@ -1,0 +1,967 @@
+/* ==========================================================================
+   Tata Letak dan Komponen Beranda Rasa Pulang
+   ========================================================================== */
+
+/* Kontainer Standar */
+.section-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ==========================================================================
+   Header & Navigasi
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(250, 246, 239, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(234, 221, 207, 0.6);
+  width: 100%;
+}
+
+.site-header-container {
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-logo-icon {
+  flex-shrink: 0;
+}
+
+.brand-wordmark {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.02em;
+}
+
+/* Desktop Nav */
+.desktop-nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 32px;
+}
+
+.desktop-nav-link {
+  position: relative;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.2s var(--ease-smooth);
+}
+
+.desktop-nav-link:hover {
+  color: var(--color-orange);
+}
+
+.desktop-nav-link.active {
+  color: var(--color-orange);
+}
+
+.nav-active-indicator {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--color-orange);
+  border-radius: 2px;
+}
+
+/* Header Contact Button */
+.header-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-orange);
+  background-color: transparent;
+  border: 1.5px solid var(--color-orange);
+  border-radius: 8px;
+  padding: 8px 18px;
+  cursor: pointer;
+}
+
+/* Mobile Toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text-dark);
+  padding: 6px;
+  cursor: pointer;
+}
+
+/* Mobile Drawer */
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 150;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mobile-drawer-content {
+  width: 280px;
+  max-width: 85vw;
+  height: 100%;
+  background-color: var(--color-bg-primary);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.mobile-nav-link {
+  display: block;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-cream-border);
+}
+
+.mobile-nav-link.active {
+  color: var(--color-orange);
+}
+
+.mobile-contact-btn {
+  width: 100%;
+  background-color: var(--color-orange);
+  color: #FFFFFF;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+.hero-container {
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-eyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-text-dark);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-size: 44px;
+  line-height: 1.18;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-orange);
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(220, 114, 44, 0.25);
+  text-decoration: none;
+}
+
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-orange);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+}
+
+.hero-image-frame {
+  width: 100%;
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-cream-surface);
+}
+
+/* ==========================================================================
+   Category Section
+   ========================================================================== */
+.category-section {
+  padding-top: 16px;
+  padding-bottom: 64px;
+}
+
+.section-header {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  color: var(--color-text-muted);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-cream-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+}
+
+.category-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #F4EDE3;
+  overflow: hidden;
+}
+
+.category-name-bar {
+  background-color: var(--color-cream-surface);
+  padding: 12px 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  width: 100%;
+}
+
+/* ==========================================================================
+   Featured Products Section
+   ========================================================================== */
+.featured-section {
+  padding-top: 16px;
+  padding-bottom: 72px;
+}
+
+.featured-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.see-all-link {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-orange);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-lg);
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.product-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background-color: #F7F2EC;
+  margin-bottom: 12px;
+}
+
+.product-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-status-row {
+  margin-bottom: 8px;
+}
+
+.status-badge {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 2.5px 8px;
+  border-radius: 4px;
+  line-height: 1.3;
+}
+
+.status-available {
+  background-color: var(--color-badge-avail-bg);
+  color: var(--color-badge-avail-text);
+  border: 1px solid var(--color-badge-avail-border);
+}
+
+.status-empty {
+  background-color: var(--color-badge-empty-bg);
+  color: var(--color-badge-empty-text);
+  border: 1px solid var(--color-badge-empty-border);
+}
+
+.product-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.35;
+  margin-bottom: 8px;
+  min-height: 40px; /* Menjaga konsistensi tinggi kartu */
+}
+
+.product-price {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: var(--color-orange);
+  margin-bottom: 8px;
+  margin-top: auto;
+}
+
+.product-action-row {
+  margin-top: 2px;
+}
+
+.product-detail-btn {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-orange);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Benefits Section ("Kenapa Rasa Pulang?")
+   ========================================================================== */
+.benefits-section {
+  padding-bottom: 72px;
+}
+
+.benefits-container {
+  background-color: var(--color-cream-surface);
+  border: 1px solid var(--color-cream-border);
+  border-radius: var(--border-radius-xl);
+  padding: 40px 48px;
+}
+
+.benefits-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin-bottom: 36px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.benefit-column {
+  padding: 0 28px;
+}
+
+.benefit-column.has-divider {
+  border-right: 1px solid #DECFC0;
+}
+
+.benefit-icon-wrapper {
+  margin-bottom: 14px;
+}
+
+.benefit-item-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  margin-bottom: 6px;
+}
+
+.benefit-item-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   About Section ("Ada Cerita di Setiap Rasa")
+   ========================================================================== */
+.about-section {
+  padding-top: 16px;
+  padding-bottom: 72px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-image-wrapper {
+  width: 100%;
+}
+
+.about-image-frame {
+  width: 100%;
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-cream-surface);
+}
+
+.about-eyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-orange);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.about-title {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.22;
+  color: var(--color-text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+
+.about-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+}
+
+.about-link {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-orange);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ==========================================================================
+   Store Location Section ("Mampir dan Temukan Favoritmu")
+   ========================================================================== */
+.location-section {
+  padding-bottom: 72px;
+}
+
+.location-card {
+  background-color: var(--color-cream-surface);
+  border: 1px solid var(--color-cream-border);
+  border-radius: var(--border-radius-xl);
+  padding: 36px 40px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.location-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+}
+
+.location-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.location-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.detail-icon-circle {
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.detail-primary-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.4;
+}
+
+.detail-secondary-text {
+  font-size: 12px;
+  color: var(--color-text-subtle);
+  margin-top: 2px;
+}
+
+.location-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.location-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-orange);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.location-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-orange);
+  background-color: transparent;
+  border: 1.5px solid var(--color-orange);
+  border-radius: 8px;
+  padding: 10px 18px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.location-image-wrapper {
+  width: 100%;
+}
+
+.location-image-frame {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+
+.site-footer-container {
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.footer-columns-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.6fr;
+  gap: 40px;
+}
+
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.footer-brand-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.footer-tagline {
+  font-size: 14px;
+  color: var(--color-footer-muted);
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+.footer-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.footer-link-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-link {
+  font-size: 14px;
+  color: var(--color-footer-muted);
+  transition: color 0.2s var(--ease-smooth);
+}
+
+.footer-link:hover {
+  color: var(--color-orange);
+}
+
+.footer-info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contact-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--color-footer-muted);
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.footer-info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--color-footer-muted);
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid var(--color-footer-border);
+  margin-top: 36px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #A8988B;
+}
+
+/* ==========================================================================
+   Floating WhatsApp Button
+   ========================================================================== */
+.floating-whatsapp-btn {
+  position: fixed;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  right: calc(24px + env(safe-area-inset-right, 0px));
+  z-index: 90;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-whatsapp);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.25s var(--ease-smooth), background-color 0.2s var(--ease-smooth), box-shadow 0.25s var(--ease-smooth);
+}
+
+@media (hover: hover) {
+  .floating-whatsapp-btn:hover {
+    background-color: var(--color-whatsapp-hover);
+    transform: scale(1.06);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  }
+}
+
+/* ==========================================================================
+   Media Queries & Responsivitas
+   ========================================================================== */
+
+/* Tablet & Layar Menengah (<= 1024px) */
+@media (max-width: 1024px) {
+  .hero-container {
+    gap: 32px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .benefits-grid {
+    gap: 20px;
+  }
+
+  .benefit-column {
+    padding: 0 12px;
+  }
+
+  .footer-columns-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .footer-contact-col {
+    grid-column: span 2;
+  }
+}
+
+/* Tablet Kecil & Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .desktop-nav,
+  .header-action-wrapper {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .hero-section {
+    padding-top: 28px;
+    padding-bottom: 48px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .benefits-container {
+    padding: 28px 20px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .benefit-column {
+    padding: 0;
+  }
+
+  .benefit-column.has-divider {
+    border-right: none;
+    border-bottom: 1px solid #DECFC0;
+    padding-bottom: 24px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-title {
+    font-size: 28px;
+  }
+
+  .location-card {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 28px;
+  }
+
+  .footer-columns-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-contact-col {
+    grid-column: span 1;
+  }
+
+  /* Target sentuh minimal 44px */
+  .hero-btn-primary,
+  .location-btn-primary,
+  .location-btn-secondary,
+  .mobile-contact-btn {
+    min-height: 44px;
+  }
+}
+
+/* Mobile Kecil (<= 420px) */
+@media (max-width: 420px) {
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    justify-content: center;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .location-btn-primary,
+  .location-btn-secondary {
+    justify-content: center;
+  }
+}

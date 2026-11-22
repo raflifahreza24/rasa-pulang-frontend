@@ -1,0 +1,56 @@
+:root {
+  /* Palet Warna Utama */
+  --color-bg-primary: #FAF6EF;
+  --color-text-dark: #493024;
+  --color-text-muted: #6B5344;
+  --color-text-subtle: #8A7365;
+
+  --color-orange: #DC722C;
+  --color-orange-hover: #C6611F;
+  --color-orange-light: #FBF0E8;
+
+  --color-cream-surface: #F0E6D7;
+  --color-cream-border: #E4D5C2;
+  --color-cream-notice: #F4EDE3;
+
+  --color-card-bg: #FFFFFF;
+  --color-card-border: #EADDCF;
+  --color-card-border-hover: #DBC7B2;
+
+  --color-footer-bg: #3C2415;
+  --color-footer-text: #FAF6EF;
+  --color-footer-muted: #D5C7B8;
+  --color-footer-border: #523B2E;
+
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #1EBE5D;
+
+  /* Badge Ketersediaan */
+  --color-badge-avail-bg: #EAF8EF;
+  --color-badge-avail-text: #167C3E;
+  --color-badge-avail-border: #C2ECCF;
+
+  /* Badge Habis: Abu-abu hangat dengan teks gelap sesuai referensi visual */
+  --color-badge-empty-bg: #EDE6DF;
+  --color-badge-empty-text: #594235;
+  --color-badge-empty-border: #DDD2C5;
+
+  /* Tipografi */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Dimensi & Layout */
+  --container-max-width: 1180px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 14px;
+  --border-radius-xl: 18px;
+
+  /* Bayangan Halus */
+  --shadow-sm: 0 2px 6px rgba(73, 48, 36, 0.05);
+  --shadow-md: 0 8px 20px rgba(73, 48, 36, 0.07);
+  --shadow-lg: 0 14px 30px rgba(73, 48, 36, 0.1);
+
+  /* Transisi */
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-normal: 0.3s;
+}
